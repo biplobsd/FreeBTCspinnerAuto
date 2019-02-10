@@ -1,5 +1,5 @@
 # FreeBTCspinerAuto
-<img src="https://img.shields.io/apm/l/:packageName.svg"> <img src="https://img.shields.io/badge/release-v1.0-red.svg"> 
+<img src="https://img.shields.io/badge/license-MIT-green.svg"> <img src="https://img.shields.io/badge/release-v1.0-red.svg"> 
 
 Now you can think-less touching spin button. This is script done your work.
 It is an automation script using Ankulua like Pokemon GO Plus.
@@ -21,9 +21,13 @@ Chinese: http://ankulua-tw.boards.net/
 
 ### How to Install and Run
 [1] Download it. And save your phone storage.
+
 [2] Download and install Ankulua app. It is on playstore.
+
 [3] Open ankulua and selete the script and start service.
+
 [4] Now Navigate to the Free btc spinner app and play script.
+
 
 
 ## Disclaimer:
@@ -32,7 +36,7 @@ Chinese: http://ankulua-tw.boards.net/
 - If you want to use it, please bear any possible losses.
 
 ## Tested Device: 
-Xiaomi redmi 4 prime
+-Xiaomi redmi 4 prime
 
 ### Coded By BiplobSD a.k.a alpha4D
 version = "1.0"
