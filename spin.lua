@@ -8,25 +8,29 @@
 
 coded by biplobsd
 --]]
-version = "\n\nv1.2"
+version = "\n\nv1.3"
 -- ========== Settings ================
 
 -- Globle Variables Setup 
 setImmersiveMode(true)
 Settings:setCompareDimension(true, 1080)
 Settings:setScriptDimension(true, 1080)
+offers = 0
 
 -- Region config
 waitf = Region(277,1313, 373, 209)
 LCheck = Region(228, 93, 207, 87)
 offer1 = Region(137, 495, 45, 57)
-spin = Region(762, 1709, 62, 22)
+spin = Region(692, 1680, 130, 51)
+spinColG = Region(811, 1690, 0, 0)
+waitColG = Region(806, 1691, 0, 0)
 lerrorR = Region(595, 845, 183, 75)
 climeS = Region(286, 807, 284, 64)
 climeC = Region(131, 755, 171, 71)
 climeSuc = Region(297, 793, 259, 57)
 PleWait = Region(163, 763, 757, 99)
 verifybtcapp = Region(896, 69, 128,132)
+lowPowerD = Region(273, 122, 0, 0)
 
 -- environment setup
 dir = scriptPath();
@@ -64,33 +68,38 @@ timer:set()
 -----------------
 while waitf:exists(Pattern("Wel_W.png"), 0) do 
     wait(3)
-    toast("Wait")
-    toast(timer:check() .. " sec")
+    toast("Wait " .. timer:check() .. " sec")
     if timer:check() >= timerSET then
         scriptExit("You have maybe internet problem. So your app need more time for load app. \nRuntime: " .. timer:check()/60 .. " minutes" .. version)
         break
     end
 end
 
+lowPD = {getColor(lowPowerD, 0)}
+while (lowPD[1] == 102 or lowPD[1] == 254) do
+
     -- Spinning
 -----------------
-while not LCheck:exists(Pattern("Low_W.png"), 0.4) do
     if (ClimeNowOnly) then
         break
     end
     if ClimeNowOnly == false then
-        spinsave = spin:exists(Pattern("spin.png"), 0)
-        if spinsave ~= nil then
+        local spinC = {getColor(spinColG, 0)}
+        if (spinC[2] == 176 or spinC[2] == 70) then
             click(Location(752, 1704))
             click(Location(752, 1704))
         else
-            toast("Spin not Found. Wait")
-            break
+            if (spinC[1] == 232) then
+                wait(0.8)
+            else
+                break
+            end
         end
     end
+
     -- Offer Check
 -----------------
-    if (offer) then
+    if (offer) and offers == 0 then
         offersave = offer1:exists(Pattern("of_1.png"), 0)
          if offersave ~= nil then
             toast("Offer found")
@@ -115,6 +124,7 @@ while not LCheck:exists(Pattern("Low_W.png"), 0.4) do
             break
         end
     end
+    lowPD = {getColor(lowPowerD, 0)}
 end
 
 wait(0.1)

@@ -1,5 +1,5 @@
 # FreeBTCspinnerAuto
-<img src="https://img.shields.io/badge/license-MIT-green.svg"> <img src="https://img.shields.io/badge/release-v1.2-red.svg"> 
+<img src="https://img.shields.io/badge/license-MIT-green.svg"> <img src="https://img.shields.io/badge/release-v1.3-red.svg"> 
 
 Now you can think-less touching spin button. This is script done your work.
 It is an automation script using Ankulua like Pokemon GO Plus.
